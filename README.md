@@ -1,22 +1,25 @@
 # stac-backends
 
-STAC can be used in a lot of different ways:
+There's a lot of things you can do with a STAC catalog, both as a maintainer/provider and as a user:
 
 - **Search (aka "needle in a haystack")**: Find one or a few items
 - **Full scan**: Find most or all items
 - **Aggregations**: Statistics on the STAC items
 - **Ingestion**: Add one or more items to a catalog
+- **Dumps**: Take all items out of a catalog into another format
+- **Migrations**: Update a catalog to a new version or schema
 
-Here's a rough comparison of each backend for each these uses, as well as their maturity, using a very subjective [tier system](https://en.wikipedia.org/wiki/Tier_list).
+Here's a rough comparison of each backend for each of these uses, as well as their maturity.
 
-| Tier | Search                                    | Full scan                                 | Aggregations                              | Ingest                                                       | Maturity                                  |
-| ---- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- | ------------------------------------------------------------ | ----------------------------------------- |
-| S    | [pgstac](#pgstac)                         |                                           | [elasticsearch](#elasticsearchopensearch) |                                                              | [static](#static)                         |
-| A    | [elasticsearch](#elasticsearchopensearch) | [stac-geoparquet](#stac-geoparquet)       | [stac-geoparquet](#stac-geoparquet)       | [static](#static)                                            | [pgstac](#pgstac)                         |
-| B    |                                           | [static](#static)                         |                                           | [pgstac](#pgstac), [elasticsearch](#elasticsearchopensearch) | [elasticsearch](#elasticsearchopensearch) |
-| C    | [stac-geoparquet](#stac-geoparquet)\*     | [elasticsearch](#elasticsearchopensearch) | [pgstac](#pgstac)                         | [stac-geoparquet](#stac-geoparquet)\*                        | [stac-geoparquet](#stac-geoparquet)       |
-| D    |                                           | [pgstac](#pgstac)                         |                                           |                                                              |                                           |
-| F    | [static](#static)                         |                                           | [static](#static)                         |                                                              |                                           |
+|              | [pgstac](#pgstac) | [elasticsearch](#elasticsearchopensearch) | [stac-geoparquet](#stac-geoparquet) | [static](#static) |
+| ------------ | :---------------: | :---------------------------------------: | :---------------------------------: | :---------------: |
+| Search       |        ✅         |                    ✅                     |                ⚠️\*                 |        ❌         |
+| Full scan    |        ❌         |                    ⚠️                     |                 ✅                  |        ⚠️         |
+| Aggregations |        ⚠️         |                    ✅                     |                 ✅                  |        ❌         |
+| Ingest       |        ⚠️         |                    ⚠️                     |                ⚠️\*                 |        ✅         |
+| Maturity     |        ✅         |                    ⚠️                     |                 ⚠️                  |        ✅         |
+| Dumps        |        ✅         |                    ✅                     |                 ✅                  |        ✅         |
+| Migrations   |        ✅         |                    ⚠️                     |                 ❌                  |        ❌         |
 
 ## Backends
 
@@ -58,9 +61,3 @@ Some notes/caveats about the **stac-geoparquet** ratings in the tier list:
 ### Static
 
 STAC catalogs can be statically hosted on blob storage as a collection of JSON files.
-
-[^1]: With datetime sorting (e.g via a [hash](https://github.com/radiantearth/stac-spec/discussions/1378))
-
-[^2]: Without datetime sorting
-
-[^3]: Until we build support e.g. via [iceberg](https://iceberg.apache.org/)
