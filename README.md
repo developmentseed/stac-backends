@@ -9,14 +9,14 @@ STAC can be used in a lot of different ways:
 
 Here's a rough comparison of each backend for each these uses, as well as their maturity, using a very subjective [tier system](https://en.wikipedia.org/wiki/Tier_list).
 
-| Tier | Search | Full scan | Aggregations | Ingest | Maturity |
-| -- | -- | -- | -- | -- | -- |
-| S | [pgstac](#pgstac) | | [elasticsearch](#elasticsearchopensearch) | | [static](#static) |
-| A | [elasticsearch](#elasticsearchopensearch) | | [stac-geoparquet](#stac-geoparquet) | [static](#static) | [pgstac](#pgstac) |
-| B | | [stac-geoparquet](#stac-geoparquet), [static](#static) | | [pgstac](#pgstac), [elasticsearch](#elasticsearchopensearch) | [elasticsearch](#elasticsearchopensearch) |
-| C | [stac-geoparquet](#stac-geoparquet) | [elasticsearch](#elasticsearchopensearch) | [pgstac](#pgstac) | [stac-geoparquet](#stac-geoparquet) | [stac-geoparquet](#stac-geoparquet) |
-| D | [stac-geoparquet](#stac-geoparquet) | [pgstac](#pgstac) | | | |
-| F | [static](#static) | | [static](#static) | | |
+| Tier | Search                                    | Full scan                                 | Aggregations                              | Ingest                                                       | Maturity                                  |
+| ---- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- | ------------------------------------------------------------ | ----------------------------------------- |
+| S    | [pgstac](#pgstac)                         |                                           | [elasticsearch](#elasticsearchopensearch) |                                                              | [static](#static)                         |
+| A    | [elasticsearch](#elasticsearchopensearch) | [stac-geoparquet](#stac-geoparquet)       | [stac-geoparquet](#stac-geoparquet)       | [static](#static)                                            | [pgstac](#pgstac)                         |
+| B    |                                           | [static](#static)                         |                                           | [pgstac](#pgstac), [elasticsearch](#elasticsearchopensearch) | [elasticsearch](#elasticsearchopensearch) |
+| C    | [stac-geoparquet](#stac-geoparquet)       | [elasticsearch](#elasticsearchopensearch) | [pgstac](#pgstac)                         | [stac-geoparquet](#stac-geoparquet)                          | [stac-geoparquet](#stac-geoparquet)       |
+| D    | [stac-geoparquet](#stac-geoparquet)       | [pgstac](#pgstac)                         |                                           |                                                              |                                           |
+| F    | [static](#static)                         |                                           | [static](#static)                         |                                                              |                                           |
 
 ## Backends
 
@@ -35,7 +35,7 @@ Excellent for large scale deployments, or if you already have a Postgres instanc
 ### elasticsearch/opensearch
 
 There's an API implementation that uses an elasticsearch/opensearch backend.
-There's no published schema for the *search indices, those are up to the instance. 
+There's no published schema for the \*search indices, those are up to the instance.
 
 - [Homepage](https://stac-utils.github.io/stac-fastapi-elasticsearch-opensearch/)
 - [Repo](https://github.com/stac-utils/stac-fastapi-elasticsearch-opensearch)
@@ -60,5 +60,7 @@ Some notes/caveats about the **stac-geoparquet** ratings in the tier list:
 STAC catalogs can be statically hosted on blob storage as a collection of JSON files.
 
 [^1]: With datetime sorting (e.g via a [hash](https://github.com/radiantearth/stac-spec/discussions/1378))
+
 [^2]: Without datetime sorting
+
 [^3]: Until we build support e.g. via [iceberg](https://iceberg.apache.org/)
