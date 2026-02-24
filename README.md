@@ -4,9 +4,10 @@ STAC can be used in a lot of different ways:
 
 - **Search (aka "needle in a haystack")**: Find one or a few items
 - **Full scan**: Find most or all items
+- **Aggregations**: Statistics on the STAC items
 - **Ingestion**: Add one or more items to a catalog
 
-Here's a rough comparison of each backend for each these uses, using a very subjective [tier system](https://en.wikipedia.org/wiki/Tier_list).
+Here's a rough comparison of each backend for each these uses, as well as their maturity, using a very subjective [tier system](https://en.wikipedia.org/wiki/Tier_list).
 
 | Tier | Search | Full scan | Aggregations | Ingest | Maturity |
 | -- | -- | -- | -- | -- | -- |
