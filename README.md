@@ -8,13 +8,14 @@ STAC can be used in a lot of different ways:
 
 Here's a rough comparison of each backend for each these uses, using a very subjective [tier system](https://en.wikipedia.org/wiki/Tier_list).
 
-| Uses | [pgstac](#pgstac) | [elasticsearch/opensearch](#elasticsearch-opensearch) | [stac-geoparquet](#stac-geoparquet) | [Static catalog](#static) |
-| -- | -- | -- | -- | -- | 
-| Search | S | A | C/D | F |
-| Full scan | D | C | B | B |
-| Aggregations | C | S | A | F |
-| Ingest | B | B | C | A |
-| Maturity | A | B | C | S |
+| Tier | Search | Full scan | Aggregations | Ingest | Maturity |
+| -- | -- | -- | -- | -- | -- |
+| S | [pgstac](#pgstac) | | [elasticsearch/opensearch](#elasticsearch-opensearch) | | [Static](#static) |
+| A | [elasticsearch/opensearch](#elasticsearch-opensearch) | | [stac-geoparquet](#stac-geoparquet) | [Static](#static) | [pgstac](#pgstac) |
+| B | | [stac-geoparquet](#stac-geoparquet), [Static](#static) | | [pgstac](#pgstac), [elasticsearch/opensearch](#elasticsearch-opensearch) | [elasticsearch/opensearch](#elasticsearch-opensearch) |
+| C | [stac-geoparquet](#stac-geoparquet) | [elasticsearch/opensearch](#elasticsearch-opensearch) | [pgstac](#pgstac) | [stac-geoparquet](#stac-geoparquet) | [stac-geoparquet](#stac-geoparquet) |
+| D | [stac-geoparquet](#stac-geoparquet) | [pgstac](#pgstac) | | | |
+| F | [Static](#static) | | [Static](#static) | | |
 
 ## Backends
 
