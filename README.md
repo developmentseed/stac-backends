@@ -11,12 +11,12 @@ Here's a rough comparison of each backend for each these uses, as well as their 
 
 | Tier | Search | Full scan | Aggregations | Ingest | Maturity |
 | -- | -- | -- | -- | -- | -- |
-| S | [pgstac](#pgstac) | | [elasticsearch/opensearch](#elasticsearch-opensearch) | | [Static](#static) |
-| A | [elasticsearch/opensearch](#elasticsearch-opensearch) | | [stac-geoparquet](#stac-geoparquet) | [Static](#static) | [pgstac](#pgstac) |
-| B | | [stac-geoparquet](#stac-geoparquet), [Static](#static) | | [pgstac](#pgstac), [elasticsearch/opensearch](#elasticsearch-opensearch) | [elasticsearch/opensearch](#elasticsearch-opensearch) |
-| C | [stac-geoparquet](#stac-geoparquet) | [elasticsearch/opensearch](#elasticsearch-opensearch) | [pgstac](#pgstac) | [stac-geoparquet](#stac-geoparquet) | [stac-geoparquet](#stac-geoparquet) |
+| S | [pgstac](#pgstac) | | [elasticsearch](#elasticsearchopensearch) | | [static](#static) |
+| A | [elasticsearch](#elasticsearchopensearch) | | [stac-geoparquet](#stac-geoparquet) | [static](#static) | [pgstac](#pgstac) |
+| B | | [stac-geoparquet](#stac-geoparquet), [static](#static) | | [pgstac](#pgstac), [elasticsearch](#elasticsearchopensearch) | [elasticsearch](#elasticsearchopensearch) |
+| C | [stac-geoparquet](#stac-geoparquet) | [elasticsearch](#elasticsearchopensearch) | [pgstac](#pgstac) | [stac-geoparquet](#stac-geoparquet) | [stac-geoparquet](#stac-geoparquet) |
 | D | [stac-geoparquet](#stac-geoparquet) | [pgstac](#pgstac) | | | |
-| F | [Static](#static) | | [Static](#static) | | |
+| F | [static](#static) | | [static](#static) | | |
 
 ## Backends
 
