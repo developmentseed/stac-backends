@@ -14,8 +14,8 @@ Here's a rough comparison of each backend for each these uses, as well as their 
 | S    | [pgstac](#pgstac)                         |                                           | [elasticsearch](#elasticsearchopensearch) |                                                              | [static](#static)                         |
 | A    | [elasticsearch](#elasticsearchopensearch) | [stac-geoparquet](#stac-geoparquet)       | [stac-geoparquet](#stac-geoparquet)       | [static](#static)                                            | [pgstac](#pgstac)                         |
 | B    |                                           | [static](#static)                         |                                           | [pgstac](#pgstac), [elasticsearch](#elasticsearchopensearch) | [elasticsearch](#elasticsearchopensearch) |
-| C    | [stac-geoparquet](#stac-geoparquet)       | [elasticsearch](#elasticsearchopensearch) | [pgstac](#pgstac)                         | [stac-geoparquet](#stac-geoparquet)                          | [stac-geoparquet](#stac-geoparquet)       |
-| D    | [stac-geoparquet](#stac-geoparquet)       | [pgstac](#pgstac)                         |                                           |                                                              |                                           |
+| C    | [stac-geoparquet](#stac-geoparquet)\*     | [elasticsearch](#elasticsearchopensearch) | [pgstac](#pgstac)                         | [stac-geoparquet](#stac-geoparquet)\*                        | [stac-geoparquet](#stac-geoparquet)       |
+| D    |                                           | [pgstac](#pgstac)                         |                                           |                                                              |                                           |
 | F    | [static](#static)                         |                                           | [static](#static)                         |                                                              |                                           |
 
 ## Backends
